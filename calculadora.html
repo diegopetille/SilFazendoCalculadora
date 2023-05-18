@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/estilocalc.css" />
+  <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/font-awesome.min.css">
+  <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+  <title>Calculadora</title>
+</head>
+
+<body>
+  <header>
+    <div class="menu">
+      <div class="overlay" id="nav">
+        <a href="#" class="closeBtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+          <a href="index.html" <i class="fa fa-home">&nbsp;Home</a>
+          <a href="#" <i class="fa fa-heart">&nbsp;Sobre</a>
+          <a href="#" <i class="fa fa-shopping-bag">&nbsp;Encomendas</a>
+          <a href="#" <i class="fa fa-phone-square">&nbsp;Contato</a>
+          <a href="calculadora.html" <i class="fa-solid fa-calculator">&nbsp;Calculadora</a>
+        </div>
+      </div>
+      <button class="nav-button" onclick="openNav()">
+        <i class="fa-solid fa-bars fa-2x"></i>
+      </button>
+    </div>
+
+    <div class="container">
+      <img src="./resources/logo.png" class="logo" id="logo" onclick="danceMonkey()" />
+    </div>
+  </header>
+  <div id="container">
+    <div id="forms">
+
+      <form class="form_calc">
+
+        <label for="Nome_prod">Nome do produto:</label><br />
+        <input type="text" class="campo" id="Nome_prod" name="Nome_prod" size="43" placeholder="Nome aqui!" /><br />
+
+        <label for="Lucro">Lucro em porcentagem:</label><br />
+        <input type="number" class="campo" id="Lucro" name="Lucro" size="43" placeholder="% de lucro aqui!" /><br />
+
+        <div id="insumosContainer">
+          <div class="insumo">
+
+            <h3>Insumos</h3>
+
+            <label for="Nome_ins">Nome do insumo:</label><br />
+            <input type="text" class="campo" id="Nome_ins" name="Nome_ins" size="43" placeholder="Nome aqui!" /><br />
+
+            <label for="Quantidade_ins">Quantidade usada:</label><br />
+            <input type="number" class="campo" id="Quantidade_ins" name="Quantidade_ins" size="43"
+              placeholder="Quantidade aqui!" /><br />
+
+            <label for="Quantidade_emb">Quantidade na embalagem:</label><br />
+            <input type="number" class="campo" id="Quantidade_emb" name="Quantidade_emb" size="43"
+              placeholder="Quantidade aqui!" /><br />
+
+            <label for="Valor_ins">Valor do insumo:</label><br />
+            <input type="number" class="campo" id="Valor_ins" name="Valor_ins" size="43"
+              placeholder="Valor aqui!" /><br />
+          </div>
+        </div>
+        <div class="btn-content">
+          <button id="adicionarInsumo" class="botao"><i class='bx bx-plus bx-tada-hover bx-sm'style="color: #324e40;"></i>&nbspAdicionar Insumo</button><br />
+        </div>
+        <div class="btn-content">
+          <button id="calcular-produtos" class="botao"> <i class='bx bx-math bx-tada-hover bx-sm'style="color: #324e40;"></i>&nbspCalcular</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="relatorio">
+
+      <label for="Nome">Nome do produto:</label>
+      <input id="Nome" class="field" type="text" disabled><br>
+
+      <label for="porcentagem">Porcentagem de lucro:</label>
+      <input id="porcentagem" class="field" type="text" disabled>
+
+
+      <h2>Insumos:</h2>
+
+      <table id="tabela_insumos">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Quantidade usada</th>
+            <th>Quantidade embalagem</th>
+            <th>Valor</th>
+          </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+      </table>
+
+      <label for="resprod">Custo de produção:</label>
+      <input id="resprod" class="field" type="text" disabled><br>
+
+      <label for="resfinal">Valor final:</label>
+      <input id="resfinal" class="field" type="text" disabled>
+
+      <div class="btn-content">
+        <button class="botao" onclick="exportToExcel()">
+          <i class='bx bx-table bx-tada-hover bx-sm' style="color: #324e40;"></i>&nbspExportar p/ Excel
+        </button>
+      </div>
+    </div>
+
+
+  </div>
+
+  <script src="./js/menu.js"></script>
+  <script src="./js/calculadora.js"></script>
+  <script src="./js/add-insumo.js"></script>
+  <script src="./js/export-excel.js"></script>
+
+</body>
+
+</html>
